@@ -6,14 +6,14 @@ Created on Sat Dec 20 15:59:02 2014
 """
 
 from ctypes import CDLL, Structure, POINTER, c_int, c_double, c_bool, cast, byref
-import platform,os
+import platform,os,sys
 
 system = platform.system()
 
 if system == "Darwin":
 	nScopeAPI = CDLL(os.path.join(os.path.dirname(__file__), "../mac/libnscope.so"))
 elif system == "Windows":
-	nScopeAPI = CDLL(os.path.join(os.path.dirname(__file__), "../windows/libnscope.dll"))
+  	nScopeAPI = CDLL(os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), "../windows/libnscope.dll")))        
 elif system == "Linux":
 	nScopeAPI = CDLL(os.path.join(os.path.dirname(__file__), "../linux/libnscope.so"))
 
