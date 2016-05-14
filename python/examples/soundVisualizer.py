@@ -1,8 +1,11 @@
 import sys
 sys.path.append('../')
 from nScopePy import *
+import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from pylab import *
+
+fig = plt.figure()
 
 nScope = nScopeObj()
 

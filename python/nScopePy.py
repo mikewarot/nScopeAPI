@@ -13,7 +13,7 @@ system = platform.system()
 if system == "Darwin":
 	nScopeAPI = CDLL(os.path.join(os.path.dirname(__file__), "../mac/libnscope.so"))
 elif system == "Windows":
-  	nScopeAPI = CDLL(os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), "../windows/libnscope.dll")))        
+  	nScopeAPI = CDLL(os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), "../../windows/libnscope.dll")))        
 elif system == "Linux":
 	nScopeAPI = CDLL(os.path.join(os.path.dirname(__file__), "../linux/libnscope.so"))
 
